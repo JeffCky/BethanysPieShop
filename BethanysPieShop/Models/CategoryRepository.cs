@@ -1,14 +1,14 @@
 ﻿namespace BethanysPieShop.Models
 {
-    public class CategoryRepository : ICategoryRepository
+    public class CategoryRepository: ICategoryRepository
     {
-        private readonly BethanysPieShopDbContext _bethanysPieShopContext;
+        private readonly BethanysPieShopDbContext _bethanysPieShopDbContext;
 
-        public CategoryRepository(BethanysPieShopDbContext bethanysPieShopContext)
+        public CategoryRepository(BethanysPieShopDbContext bethanysPieShopDbContext)
         {
-            _bethanysPieShopContext = bethanysPieShopContext;
+            _bethanysPieShopDbContext = bethanysPieShopDbContext;
         }
 
-        public IEnumerable<Category> AllCategories => _bethanysPieShopContext.Categories.OrderBy(p => p.CategoryName);
+        public IEnumerable<Category> AllCategories => _bethanysPieShopDbContext.Categories.OrderBy(p => p.CategoryName);
     }
 }

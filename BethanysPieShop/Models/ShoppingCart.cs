@@ -104,5 +104,4 @@ namespace BethanysPieShop.Models
             return total;
         }
     }
-    
 }

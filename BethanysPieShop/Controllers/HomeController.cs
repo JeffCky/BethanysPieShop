@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace BethanysPieShop.Controllers
 {
     public class HomeController : Controller
-    {   
+    {
         private readonly IPieRepository _pieRepository;
 
         public HomeController(IPieRepository pieRepository)
@@ -13,14 +13,13 @@ namespace BethanysPieShop.Controllers
             _pieRepository = pieRepository;
         }
 
-        public IActionResult Index()
+        public ViewResult Index()
         {
-
             var piesOfTheWeek = _pieRepository.PiesOfTheWeek;
+
             var homeViewModel = new HomeViewModel(piesOfTheWeek);
+
             return View(homeViewModel);
         }
-
-        
     }
 }
