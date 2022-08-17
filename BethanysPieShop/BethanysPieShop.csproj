@@ -6,6 +6,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="Pages\Shared\_PageLayout.cshtml" />
+  </ItemGroup>
+
 	<ItemGroup>
 
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.4">
