@@ -11,6 +11,7 @@ builder.Services.AddControllersWithViews()
     });
 
 builder.Services.AddRazorPages();
+builder.Services.AddServerSideBlazor();
 
 //builder.Services.AddScoped<ICategoryRepository, MockCategoryRepository>();
 //builder.Services.AddScoped<IPieRepository, MockPieRepository>();
@@ -39,6 +40,7 @@ if (app.Environment.IsDevelopment())
 app.UseStaticFiles();
 app.UseSession();
 
+
 //app.MapDefaultControllerRoute();
 
 app.MapControllerRoute(
@@ -46,6 +48,9 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapRazorPages();
+app.MapBlazorHub();
+
+app.MapFallbackToPage("/app/{*catchall}", "/App/Index");
 
 DbInitializer.Seed(app);
 
